@@ -57,7 +57,7 @@ public class AndroidSampleTest {
         webViewTest();
 
         System.out.println("------------#4 baidu web test-------------------");
-        baiduWebTest();
+        //baiduWebTest();
 
         System.out.println("------------#5 logout test-------------------");
         logoutTest();
@@ -96,10 +96,10 @@ public class AndroidSampleTest {
         // save screen shot
         driver.saveScreenshot(courseFile + "/webView.png");
 
-        switchToWebView(driver).elementById("pushView").click();
+        driver.elementById("pushView").click();
         driver.sleep(5000);
 
-        switchToWebView(driver).elementById("popView").click();
+        driver.elementById("popView").click();
         driver.sleep(5000);
     }
 
@@ -131,7 +131,7 @@ public class AndroidSampleTest {
 
     public void logoutTest() throws  Exception {
 
-        switchToNative(driver).elementByName("PERSONAL").click();
+        driver.elementByName("PERSONAL").click();
         driver.sleep(1000).elementByName("Logout").click();
         driver.sleep(1000);
     }

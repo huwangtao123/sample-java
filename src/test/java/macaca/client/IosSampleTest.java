@@ -37,7 +37,7 @@ public class IosSampleTest {
         porps.put("app", "https://npmcdn.com/ios-app-bootstrap@latest/build/ios-app-bootstrap.zip");
         porps.put("reuse", 1);
 
-        porps.put("deviceName", "iPhone 6s");
+        porps.put("deviceName", "iPhone X");
 
         JSONObject desiredCapabilities = new JSONObject();
         desiredCapabilities.put("desiredCapabilities", porps);
@@ -57,8 +57,8 @@ public class IosSampleTest {
         System.out.println("------------#3 webview test-------------------");
         webViewTest();
 
-        System.out.println("------------#4 baidu web test-------------------");
-        baiduWebTest();
+        //System.out.println("------------#4 baidu web test-------------------");
+        //baiduWebTest();
 
         System.out.println("------------#5 logout test-------------------");
         logoutTest();

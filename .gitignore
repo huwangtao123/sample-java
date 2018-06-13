@@ -12,4 +12,5 @@ target
 npm-debug.log
 .settings
 node_modules/
+*.iml
 *.png

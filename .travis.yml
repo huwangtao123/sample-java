@@ -28,7 +28,7 @@ matrix:
     include:
       - os: osx
         env: TEST_SUITE=ios
-        osx_image: xcode8.3
+        osx_image: xcode9.3.1nv
         language: objective-c
         before_install:
           - brew update
@@ -39,7 +39,7 @@ matrix:
           - source $(brew --prefix nvm)/nvm.sh
           - nvm install 7
           - npm i ios-simulator -g
-          - open -a Simulator --args -CurrentDeviceUDID `ios-simulator -n 'iPhone 6s'` > /dev/null 2>&1
+          - open -a Simulator --args -CurrentDeviceUDID `ios-simulator -n 'iPhone x'` > /dev/null 2>&1
         script:
           - make travis-ios
       - os: linux
@@ -62,7 +62,7 @@ matrix:
           - export DISPLAY=:99.0
           - sh -e /etc/init.d/xvfb start
         before_script:
-          - wget http://services.gradle.org/distributions/gradle-3.3-all.zip
+          - wget http://services.gradle.org/distributions/gradle-4.3-all.zip
           - unzip gradle-3.3-all.zip > /dev/null
           - export GRADLE_HOME=$PWD/gradle-3.3
           - export PATH=$GRADLE_HOME/bin:$PATH
@@ -88,8 +88,8 @@ matrix:
             - android-25
         sudo: required
         before_install:
-          - wget http://services.gradle.org/distributions/gradle-3.3-all.zip
-          - unzip gradle-3.3-all.zip > /dev/null
+          - wget http://services.gradle.org/distributions/gradle-4.3-all.zip
+          - unzip gradle-4.3-all.zip > /dev/null
           - export GRADLE_HOME=$PWD/gradle-3.3
           - export PATH=$GRADLE_HOME/bin:$PATH
           - export CHROME_BIN=chromium-browser
