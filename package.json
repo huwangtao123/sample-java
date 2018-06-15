@@ -15,6 +15,11 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "git-contributor": "^1.0.8"
+    "git-contributor": "^1.0.8",
+    "macaca-electron": "^2.0.3",
+    "macaca-cli": "*"
+  },
+  "dependencies": {
+    "list": "^2.0.13"
   }
 }
