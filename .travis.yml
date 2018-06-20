@@ -28,16 +28,15 @@ matrix:
     include:
       - os: osx
         env: TEST_SUITE=ios
-        osx_image: xcode8.3.3
+        osx_image: xcode8.3
         language: objective-c
         before_install:
           - brew update
           - brew outdated carthage || brew upgrade carthage > /dev/null 2>&1
-          - brew install ios-webkit-debug-proxy > /dev/null 2>&1
           - brew install nvm > /dev/null 2>&1
-        before_script:
           - source $(brew --prefix nvm)/nvm.sh
           - nvm install node
+          - brew install ios-webkit-debug-proxy > /dev/null 2>&1
           - npm i ios-simulator -g
           - open -a Simulator --args -CurrentDeviceUDID `ios-simulator -n 'iPhone x'` > /dev/null 2>&1
         script:
@@ -60,7 +59,6 @@ matrix:
           - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
           - export ANDROID_HOME=/usr/local/android-sdk
           - export DISPLAY=:99.0
-          - sh -e /etc/init.d/xvfb start
         before_script:
           - wget http://services.gradle.org/distributions/gradle-4.3-all.zip
           - unzip gradle-4.3-all.zip > /dev/null
@@ -96,7 +94,6 @@ matrix:
           - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
           - export ANDROID_HOME=/usr/local/android-sdk
           - export DISPLAY=:99.0
-          - sh -e /etc/init.d/xvfb start
         before_script:
           - . $HOME/.nvm/nvm.sh
           - nvm install node
